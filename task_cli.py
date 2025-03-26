@@ -35,6 +35,7 @@ class TaskManager():
                 self.task_statuses[task.status].remove(task)
                 task.status = status
                 self.task_statuses[status].append(task)
+                task.updatedAt = time.time()
                 print(f'Task status changed successfully(ID: {task.id})')
 
     def save(self):
